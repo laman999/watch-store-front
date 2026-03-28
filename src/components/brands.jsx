@@ -7,8 +7,7 @@ function Brands() {
     <div className='flex justify-between p-[25px] text-center'>
     <h2 className='font-bold text-3xl'>Shop Bestsellers</h2>
     <div className='text-[15px] '>
-     <i class="fa-solid fa-chevron-left"></i>
-    <i class="fa-solid fa-chevron-right"></i>
+     
    </div>
 </div>
     </div>

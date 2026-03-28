@@ -4,3 +4,10 @@
   font-weight: 50;
   font-style: normal;
 }
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+.backcolor{
+  background-color:;
+}

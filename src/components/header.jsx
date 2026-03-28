@@ -17,8 +17,7 @@ function Header() {
     <div className="relative z-10 flex items-center h-full px-6 md:px-16 lg:px-32">
       <div className="text-white max-w-xl md:max-w-md">
         
-        {/* Başlıq: Mobildə text-4xl ideal görünür */}
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 drop-shadow-2xl leading-tight ">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 drop-shadow-2xl  ">
           TIMELESS <span  className='elegance'> <br className="hidden sm:block " />  ELEGANCE  </span>
         </h1>
         

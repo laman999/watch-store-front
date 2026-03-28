@@ -8,13 +8,13 @@ function Navbar() {
   return (
     <nav className='bg-black text-amber-300 p-4 flex justify-between items-center shadow-lg relative z-[100]'>
       
-      {/* LOQO */}
+      
       <div className='flex items-center'>
         <Link to="/">
           <img 
             src="https://i.pinimg.com/736x/07/dd/10/07dd10b15db85dc2f694cd985c556a19.jpg" 
             alt="logo" 
-            className='w-[140px] h-[70px] object-cover' 
+            className='w-[150px] h-[80px] object-cover' 
           />
         </Link>
       </div>
