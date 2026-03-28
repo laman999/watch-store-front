@@ -42,7 +42,7 @@ function Navbar() {
       </div>
 
       <div className={`
-        absolute top-full left-0 w-full bg-black/95 border-t border-amber-900/30 p-6 flex flex-col gap-6 
+        absolute top-full left-0 w-full bg-black border-t border-amber-900/30 p-6 flex flex-col gap-6 
         transition-all duration-300 ease-in-out md:hidden
         ${isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-5'}
       `}>
