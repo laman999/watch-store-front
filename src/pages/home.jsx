@@ -3,7 +3,7 @@ import Header from '../components/header'
 import Brands from '../components/brands'
 import Mens from '../components/mens'
 import Women from '../components/women'
-import Footer from '../components/footer'
+import Craftsmanship from '../components/craftsmanship'
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
   <div className='grid  md:grid-cols-1'>
     <Mens/>
     <Women/>
-    
+    <Craftsmanship/>
   </div>
   </>
   )
