@@ -1,34 +1,21 @@
 import React from 'react'
 
+
 function Craftsmanship() {
-  return (
-    <div>
-      <section className="py-[50px] px-[25px] bg-black text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="order-2 md:order-1 text-center md:text-left">
-            <h4 className="text-[#D4AF37] uppercase mb-4 tracking-[4px] text-[16px]">Limited Edition</h4>
-            <h2 className="text-3xl md:text-[50px] font-serif mb-6 italic">The Royal Gold Series</h2>
-            <p className="text-gray-400 mb-8 text-sm md:text-base leading-relaxed">
-              Experience the pinnacle of luxury. Our Royal Gold series features an 18k gold-plated case 
-              and a genuine leather strap, designed for those who value timeless prestige.
-            </p>
-            <button className="bg-[#D4AF37] text-black px-10 py-3 uppercase text-[12px] font-bold hover:bg-white transition-all w-full md:w-auto">
-              Shop This Model
-            </button>
-          </div>
-
-          <div className=" flex justify-center order-1 md:order-2 ">
-            <img 
-              src="/video/crafts.webp" 
-              alt="Gold Watch"
-              className="rounded-[15px] w-full max-w-[500px] h-auto object-cover grayscale transition duration-700 shadow-2xl" 
-            />
-          </div>
-
-        </div>
-      </section>
+    return (
+    <div className='bg-[#F9F9F7] py-24 text-black'>
+      <div className='mb-[50px] ax-w-5xl text-center p-[20px]'>
+         <h2 className='text-[#B8860B] uppercase tracking-[8px]'>The art of watchmaking</h2>
+         <h1 className='md:text-[45px] font-bold text-[20px] text-[#1a1a1a] mb-[30px] mt-[15px] font-serif'>“True craftsmanship is the bridge between <br className="hidden md:block" />between <br /><span className='italic border-b-[2px] border-[#D4AF37]'>tradition</span> and the future.”</h1>
+         <p className='text-gray-600 mb-12  font-light md:text-[21px] text-[15px]'>Every Timeless piece is a testament to our dedication. We don't just assemble parts; 
+            we <br /> harmonize hundreds of microscopic components to create a living, breathing <br />
+            masterpiece that defies time itself. No machines, just human touch and precision.
+         </p>
+         <p className='uppercase cursor-pointer text-[13px] tracking-[4px]'><span className='border-b-[2px] border-amber-300'>our philosophy</span></p>
+      </div>
     </div>
   )
+
 }
 
 export default Craftsmanship

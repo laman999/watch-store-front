@@ -4,6 +4,7 @@ import Brands from '../components/brands'
 import Mens from '../components/mens'
 import Women from '../components/women'
 import Craftsmanship from '../components/craftsmanship'
+import Royalgold from '../components/royalgold'
 
 function Home() {
   return (
@@ -14,6 +15,8 @@ function Home() {
     <Mens/>
     <Women/>
     <Craftsmanship/>
+   <Royalgold/>
+   
   </div>
   </>
   )
