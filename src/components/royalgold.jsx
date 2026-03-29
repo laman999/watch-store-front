@@ -3,8 +3,8 @@ import React from 'react'
 function Royalgold() {
   return (
     <div>
-      <section className="py-[50px] px-[25px] bg-black text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <section className="py-[50px] px-[25px] bg-black text-white overflow-hidden" data-aos="fade-up">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center" >
           <div className="order-2 md:order-1 text-center md:text-left">
             <h4 className="text-[#D4AF37] uppercase mb-4 tracking-[4px] text-[16px]">Limited Edition</h4>
             <h2 className="text-3xl md:text-[50px] font-serif mb-6 italic">The Royal Gold Series</h2>

@@ -4,9 +4,9 @@ import { Link } from 'react-router'
 function Mens() {
   return (
     <>
-      <div className='mb-[15px] relative overflow-hidden h-full w-full '>
+      <div className='mb-[15px] relative overflow-hidden h-full w-full ' data-aos="fade-right">
         <Link to="/men" >
-                <img src="/video/men--watch.jpg" alt="collaction" className='w-full cursor-pointer object-cover h-[450px] transition-transform duration-700 hover:scale-104'/>
+                <img src="/video/men--watch.jpg" alt="collaction" className='w-full cursor-pointer object-cover h-[450px] transition-transform duration-700 hover:scale-103'/>
 
         </Link>
         <div className='absolute bottom-10 left-10 text-white'>

@@ -6,10 +6,10 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className='bg-black text-amber-300 p-4 flex justify-between items-center shadow-lg relative z-[100]'>
+    <nav className='bg-black text-amber-300 p-4 flex justify-between items-center shadow-lg relative z-[100]' >
       
       
-      <div className='flex items-center'>
+      <div className='flex items-center '>
         <Link to="/">
           <img 
             src="https://i.pinimg.com/736x/07/dd/10/07dd10b15db85dc2f694cd985c556a19.jpg" 
@@ -20,12 +20,12 @@ function Navbar() {
       </div>
 
 
-      <div className='hidden md:flex items-center space-x-8 font-medium'>
-        <NavLink to="/" className='hover:text-white transition nav-link'>Home</NavLink>
-        <NavLink to="/men" className='hover:text-white transition nav-link'>Men</NavLink>
-        <NavLink to="/women" className='hover:text-white transition nav-link'>Women</NavLink>
-        <NavLink to="/about" className='hover:text-white transition nav-link'>About</NavLink>
-        <NavLink to="/contact" className='hover:text-white transition nav-link'>Contact</NavLink>
+      <div className='hidden md:flex items-center space-x-8 font-medium list'>
+        <NavLink to="/" className='hover:text-white transition nav-link link'>Home</NavLink>
+        <NavLink to="/men" className='hover:text-white transition nav-link link'>Men</NavLink>
+        <NavLink to="/women" className='hover:text-white transition nav-link link'>Women</NavLink>
+        <NavLink to="/about" className='hover:text-white transition nav-link link'>About</NavLink>
+        <NavLink to="/contact" className='hover:text-white transition nav-link  link'>Contact</NavLink>
       </div>
 
 

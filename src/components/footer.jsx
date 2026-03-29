@@ -17,7 +17,7 @@ function Footer() {
             <li><Link to="/women" className="hover:text-[#D4AF37] transition duration-300">Women's Watches
 </Link></li>
             <li className='hover:text-[#D4AF37] transition duration-300'>Bestsellers</li>
-            <li className='hover:text-[#D4AF37] transition duration-300'>New Arrivals</li>
+            <li><Link to="/contact" className="hover:text-[#D4AF37] transition duration-300">Contact Us</Link></li>
             <li className='hover:text-[#D4AF37] transition duration-300'>Accessibility</li>
           </ul>
         </div>
@@ -27,8 +27,8 @@ function Footer() {
         <div className='flex flex-col gap-[8px]'>
           <h4 className="md:text-[14px] text-[12px] font-bold uppercase  mb-[10px] text-white">Support</h4>
           <ul className="md:text-[14px] text-[12px] text-gray-400 flex flex-col gap-[8px]">
-            <li><Link to="/contact" className="hover:text-[#D4AF37] transition duration-300">Contact Us</Link></li>
             <li className="hover:text-[#D4AF37] transition duration-300">Shipping & Returns</li>
+            <li className='hover:text-[#D4AF37] transition duration-300'>New Arrivals</li>
             <li className='hover:text-[#D4AF37] transition duration-300'>FAQ</li>
             <li className='hover:text-[#D4AF37] transition duration-300'>Privacy Policy</li>
           </ul>
