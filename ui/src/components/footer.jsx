@@ -18,7 +18,6 @@ function Footer() {
 </Link></li>
             <li className='hover:text-[#D4AF37] transition duration-300'>Bestsellers</li>
             <li><Link to="/contact" className="hover:text-[#D4AF37] transition duration-300">Contact Us</Link></li>
-            <li className='hover:text-[#D4AF37] transition duration-300'>Accessibility</li>
           </ul>
         </div>
 

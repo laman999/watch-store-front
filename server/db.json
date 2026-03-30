@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "name": "leman",
+      "surname": "manafova",
+      "pass": "1234",
+      "email": "manafova@gmail.com",
+      "id": "ZK1qcVzvs1M"
+    },
+    {
+      "name": "nisa",
+      "surname": "mammedova",
+      "pass": "1234",
+      "email": "nisa@gmail.com",
+      "id": "67Gk02sszQg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

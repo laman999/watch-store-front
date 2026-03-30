@@ -9,6 +9,7 @@ import Women from './pages/women'
 import About from './pages/about'
 import Contact from './pages/contact'
 import Register from './pages/register';
+import Login from './pages/login';
 
 
 
@@ -32,6 +33,8 @@ function App() {
         <Route element={<Contact/>} path='contact'/>
       </Route>
        <Route element={<Register/>} path='register'/>
+       <Route element={<Login/>} path='login'/>
+
     </Routes>
     </BrowserRouter>
   )

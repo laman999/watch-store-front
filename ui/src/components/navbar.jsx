@@ -1,8 +1,15 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { IoIosLogOut } from "react-icons/io";
+import { CiLogin } from "react-icons/ci";
+import { LuShoppingBag } from "react-icons/lu";
+import { AiOutlineLike } from "react-icons/ai";
 
 function Navbar() {
-
+  let id = localStorage.getItem("id")
+  const signOut = () =>{
+    localStorage.removeItem("id")
+  }
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,9 +37,21 @@ function Navbar() {
 
 
       <div className='flex items-center gap-4'>
-        <Link to="/cart" className='text-yellow-300 text-2xl hover:scale-110 transition'>🛒</Link>
-        
-      
+        <Link to="/cart" className='text-yellow-300 text-[22px] hover:scale-110 transition'>
+        <LuShoppingBag />
+        </Link>
+        {
+          id ? <Link to="login" className='text-yellow-300 text-[22px] hover:scale-110 transition'> 
+         <IoIosLogOut />
+       </Link> : <Link to="login" className='text-yellow-300 text-[22px] hover:scale-110 transition'>
+         <CiLogin />
+
+       </Link>
+        }
+        <Link to="" className='text-yellow-300 text-[22px] hover:scale-110 transition'>
+        <AiOutlineLike />
+       </Link>
+          
         <button 
           onClick={() => setIsOpen(!isOpen)} 
           className='md:hidden text-3xl focus:outline-none'

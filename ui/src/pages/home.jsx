@@ -5,10 +5,14 @@ import Mens from '../components/mens'
 import Women from '../components/women'
 import Craftsmanship from '../components/craftsmanship'
 import Royalgold from '../components/royalgold'
+import { Helmet } from 'react-helmet'
 
 function Home() {
   return (
   <>
+  <Helmet>
+      <title>Home</title>
+  </Helmet>
     <Header/>
     <Brands/>
   <div className='grid  md:grid-cols-1'>
