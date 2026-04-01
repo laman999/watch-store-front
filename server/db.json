@@ -13,6 +13,13 @@
       "pass": "1234",
       "email": "nisa@gmail.com",
       "id": "67Gk02sszQg"
+    },
+    {
+      "name": "leman",
+      "surname": "manafova",
+      "pass": "2345",
+      "email": "leman@gmail.com",
+      "id": "a-2bT0kLMi4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -4,11 +4,11 @@ import { Link } from 'react-router';
 function Footer() {
   return (
     <>
-      <footer className='bg-gradient-to-t from-[#0a0a0a] to-[#1a1a1a] w-full p-[45px] pt-16 pb-12 mt-[20px]'>
+      <footer className='bg-black w-full p-[45px] pt-16 pb-12 mt-[10px]'>
         <div className='container grid grid-cols-1 md:grid-cols-5 gap-12 text-white'>
            <div className='flex flex-col gap-[8px]'>
             <h2 className='uppercase md:text-[14px] text-[12px] mb-[10px] font-bold'>Timeless</h2>
-            <p className= 'text-gray-400 text-[13px]'> Since 1853, we have been crafting exceptional timepieces with a pioneering spirit. The ultimate destination for quality and elegance.</p>
+            <p className= 'text-gray-400 text-[13px]'> Since 2015, we have been crafting exceptional timepieces with a pioneering spirit. The ultimate destination for quality and elegance.</p>
            </div>
            <div className='flex flex-col gap-[8px]'>
           <h4 className="md:text-[14px] text-[12px] font-bold uppercase  mb-[10px] text-white">Collections</h4>
@@ -16,6 +16,8 @@ function Footer() {
             <li><Link to="/men" className="hover:text-[#D4AF37] transition duration-300">Men's Watches</Link></li>
             <li><Link to="/women" className="hover:text-[#D4AF37] transition duration-300">Women's Watches
 </Link></li>
+            <li><Link to="/about" className="hover:text-[#D4AF37] transition duration-300">About</Link></li>
+
             <li className='hover:text-[#D4AF37] transition duration-300'>Bestsellers</li>
             <li><Link to="/contact" className="hover:text-[#D4AF37] transition duration-300">Contact Us</Link></li>
           </ul>

@@ -28,24 +28,23 @@ function Navbar() {
 
 
       <div className='hidden md:flex items-center space-x-8 font-medium list'>
-        <NavLink to="/" className='hover:text-white transition nav-link link'>Home</NavLink>
-        <NavLink to="/men" className='hover:text-white transition nav-link link'>Men</NavLink>
-        <NavLink to="/women" className='hover:text-white transition nav-link link'>Women</NavLink>
-        <NavLink to="/about" className='hover:text-white transition nav-link link'>About</NavLink>
-        <NavLink to="/contact" className='hover:text-white transition nav-link  link'>Contact</NavLink>
+        <NavLink to="/" className=' transition nav-link link'>Home</NavLink>
+        <NavLink to="/men" className=' transition nav-link link'>Men</NavLink>
+        <NavLink to="/women" className=' transition nav-link link'>Women</NavLink>
+        <NavLink to="/about" className='transition nav-link link'>About</NavLink>
+        <NavLink to="/contact" className=' transition nav-link  link'>Contact</NavLink>
       </div>
-
 
       <div className='flex items-center gap-4'>
         <Link to="/cart" className='text-yellow-300 text-[22px] hover:scale-110 transition'>
         <LuShoppingBag />
         </Link>
-        {
-          id ? <Link to="login" className='text-yellow-300 text-[22px] hover:scale-110 transition'> 
-         <IoIosLogOut />
-       </Link> : <Link to="login" className='text-yellow-300 text-[22px] hover:scale-110 transition'>
-         <CiLogin />
 
+        {
+          id ? <Link to="/login" onClick={signOut} className='text-yellow-300 text-[22px] hover:scale-110 transition'> 
+         <IoIosLogOut />
+       </Link> : <Link to="/login" className='text-yellow-300 text-[22px] hover:scale-110 transition'>
+         <CiLogin />
        </Link>
         }
         <Link to="" className='text-yellow-300 text-[22px] hover:scale-110 transition'>
