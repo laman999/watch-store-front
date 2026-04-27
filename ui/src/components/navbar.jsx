@@ -13,7 +13,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className='bg-black text-amber-300 p-4 flex justify-between items-center shadow-lg relative z-[100]' >
+    <nav className='bg-black text-amber-300 p-4 flex justify-between items-center shadow-lg  relative z-[100]' >
       
       
       <div className='flex items-center '>
@@ -42,9 +42,9 @@ function Navbar() {
 
         {
           id ? <Link to="/login" onClick={signOut} className='text-yellow-300 text-[22px] hover:scale-110 transition'> 
-         <IoIosLogOut />
+          <CiLogin />
        </Link> : <Link to="/login" className='text-yellow-300 text-[22px] hover:scale-110 transition'>
-         <CiLogin />
+         <IoIosLogOut />
        </Link>
         }
         <Link to="" className='text-yellow-300 text-[22px] hover:scale-110 transition'>

@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "name": "leman",
-      "surname": "manafova",
-      "pass": "1234",
-      "email": "manafova@gmail.com",
-      "id": "ZK1qcVzvs1M"
-    },
-    {
       "name": "nisa",
       "surname": "mammedova",
       "pass": "1234",
@@ -17,9 +10,131 @@
     {
       "name": "leman",
       "surname": "manafova",
-      "pass": "2345",
-      "email": "leman@gmail.com",
-      "id": "a-2bT0kLMi4"
+      "pass": "1234",
+      "email": "manafova1@gmail.com",
+      "id": "GuQtFiMk9yE"
+    }
+  ],
+  "products" : [
+    {
+      "id": "1",
+      "name": "TISSOT PRX 40MM",
+      "category": "men",
+      "price": 45743,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw2becd257/product-pictures/0b48ea59-e96f-4c95-b952-465ba367e151_T156-410-11-041-00_Shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": false,
+      "isBestSeller": true,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "2",
+      "name": "TISSOT VISODATE 39MM",
+      "category": "men",
+      "price": 24563,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwb6780115/product-pictures/8d34a165-2f4c-44e3-aca5-b57486a541b3_T150-410-16-031-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": true,
+      "isBestSeller": false,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "3",
+      "name": "TISSOT CHRONO L 42MM",
+      "category": "men",
+      "price": 32500,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw9b840963/product-pictures/739cc440-025b-42e8-a5f9-ae33b31479b2_T137-410-11-041-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": true,
+      "isBestSeller": true,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "4",
+      "name": "TISSOT PRC 100 Solar 39MM",
+      "category": "men",
+      "price": 83642,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw153df637/product-pictures/684f5860-b5ad-4217-a45f-1d6ad5b6ee8b_T157-407-16-031-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": false,
+      "isBestSeller": false,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "5",
+      "name": "TISSOT PR 100 40MM",
+      "category": "men",
+      "price": 77637,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwc61ae4c9/product-pictures/df0577cd-fb43-4cbb-926c-949b178d8cb4_T150-410-16-051-00_Shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": true,
+      "isBestSeller": false,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "6",
+      "name": "TISSOT BALLADE 40MM",
+      "category": "men",
+      "price": 85674,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw2becd257/product-pictures/0b48ea59-e96f-4c95-b952-465ba367e151_T156-410-11-041-00_Shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": false,
+      "isBestSeller": true,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "7",
+      "name": "TISSOT PRC 100 Solar 39MM",
+      "category": "men",
+      "price": 47345,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwd2946f0a/product-pictures/5ac1a3bd-78bd-4c3a-b89c-26c1e034c9f0_T151-422-16-031-00_Shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": false,
+      "isBestSeller": false,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "8",
+      "name": "TISSOT PRX 40MM",
+      "category": "men",
+      "price": 84734,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw8a772985/product-pictures/eab45cfc-8389-4430-9cf7-1ee3d13f428c_T137-410-11-031-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": true,
+      "isBestSeller": true,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "9",
+      "name": "TISSOT LE LOCHE 39.3MM",
+      "category": "men",
+      "price": 17635,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwd8f664ab/product-pictures/7309f600-12be-445c-a91a-b7d89fdcac1d_T006-407-11-093-00_Shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": false,
+      "isBestSeller": true,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "10",
+      "name": "Tissot Chemin Des Tourelles Skeleton 39mm",
+      "category": "men",
+      "price": 46374,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw52eb2b13/product-pictures/ee3811c6-6d9e-44e1-889f-b0e6182bbc36_T137-907-97-201-00_Shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": false,
+      "isBestSeller": false,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "11",
+      "name": "TISSOT SUPERSPORT CHRONO 45.5MM",
+      "category": "men",
+      "price": 56432,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwc6e52aea/product-pictures/d33ecd71-f2b4-4d95-9eca-2dcd40e0ec25_T116-617-16-047-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": true,
+      "isBestSeller": true,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
+    },
+    {
+      "id": "12",
+      "name": "Tissot Seastar 1000 43mm",
+      "category": "men",
+      "price": 35078,
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw45f1dd0a/product-pictures/c40959ea-db66-4297-b91b-63cb686c1cf5_T137-207-11-041-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+      "isNew": false,
+      "isBestSeller": false,
+      "description": "18 kt yellow gold with a Cerachrom bezel."
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,20 +1,63 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 function Mens() {
   return (
-    <>
-      <div className='mb-[15px] relative overflow-hidden h-full w-full ' data-aos="fade-right">
-        <Link to="/men" >
-                <img src="/video/men--watch.jpg" alt="collaction" className='w-full cursor-pointer object-cover h-[450px] transition-transform duration-700 hover:scale-103'/>
-
-        </Link>
-        <div className='absolute bottom-10 left-10 text-white'>
-            <h2 className=' text-3xl font-bold mb-4 uppercase'> Men's watches </h2>
-            <Link to="/men"  className='font-bold mb-4 uppercase underline pb-1 text-[15px] hover:text-amber-400 transition'>Discover </Link>
+    <section className='p-2'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+        <div className='relative overflow-hidden group h-[75vh]'>
+          <Link to="/men">
+            <img 
+              src="/video/men--watch.jpg" 
+              alt="men collection" 
+              className='w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105'
+            />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-700"></div>
+          </Link>
+          
+          <div className='absolute bottom-12 left-12 text-white'>
+            <p className='text-[#D4AF37] text-[10px] tracking-[0.5em] uppercase mb-3 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-4 group-hover:translate-y-0'>
+              The Gentleman
+            </p>
+            <h2 className='text-3xl md:text-4xl font-serif italic tracking-widest uppercase mb-6'> 
+              Men's watches 
+            </h2>
+            <Link 
+              to="/men" 
+              className='inline-block text-[11px] uppercase tracking-[0.3em] border-b border-[#D4AF37] pb-1 hover:text-[#D4AF37] transition-colors duration-300'
+            >
+              Discover
+            </Link>
+          </div>
         </div>
+        <div className='relative overflow-hidden group h-[75vh]'>
+          <Link to="/women">
+            <img 
+              src="/video/women-watch.jpg" 
+              alt="women collection" 
+              className='w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105'
+            />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-700"></div>
+          </Link>
+          
+          <div className='absolute bottom-12 left-12 text-white'>
+            <p className='text-[#D4AF37] text-[10px] tracking-[0.5em] uppercase mb-3 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-4 group-hover:translate-y-0'>
+              The Lady
+            </p>
+            <h2 className='text-3xl md:text-4xl font-serif italic tracking-widest uppercase mb-6'> 
+              Women's watches 
+            </h2>
+            <Link 
+              to="/women" 
+              className='inline-block text-[11px] uppercase tracking-[0.3em] border-b border-[#D4AF37] pb-1 hover:text-[#D4AF37] transition-colors duration-300'
+            >
+              Discover
+            </Link>
+          </div>
+        </div>
+
       </div>
-    </>
+    </section>
   )
 }
 

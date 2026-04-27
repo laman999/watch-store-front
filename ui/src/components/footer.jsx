@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 function Footer() {
   return (
     <>
-      <footer className='bg-black w-full p-[45px] pt-16 pb-12 mt-[10px]'>
+      <footer className='bg-black w-full p-[45px] pt-16 pb-12'>
         <div className='container grid grid-cols-1 md:grid-cols-5 gap-12 text-white'>
            <div className='flex flex-col gap-[8px]'>
             <h2 className='uppercase md:text-[14px] text-[12px] mb-[10px] font-bold'>Timeless</h2>

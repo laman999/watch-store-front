@@ -17,7 +17,7 @@ function Home() {
     <Brands/>
   <div className='grid  md:grid-cols-1'>
     <Mens/>
-    <Women/>
+  
     <Craftsmanship/>
    <Royalgold/>
    
