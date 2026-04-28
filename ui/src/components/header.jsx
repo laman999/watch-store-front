@@ -1,6 +1,9 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+
 
 function Header() {
+  const { t } = useTranslation();
   return (
     <>
   
@@ -18,15 +21,15 @@ function Header() {
       <div className="text-white max-w-xl md:max-w-md">
         
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 drop-shadow-2xl tracking-widest  ">
-          TIMELESS <span  className='elegance'> <br className="hidden sm:block " />  ELEGANCE  </span>
+         {t('hero_title_1')} <span  className='elegance'> <br className="hidden sm:block " />  {t('hero_title_2')}  </span>
         </h1>
         
         <p className="mb-8 text-base md:text-lg lg:text-xl text-gray-200 drop-shadow-md max-w-sm ">
-          <em>Discover premium watches crafted for modern lifestyle.</em>
+          <em>{t('hero_desc')}</em>
         </p>
 
         <button className="bg-amber-400 text-black px-10 py-4 rounded-sm cursor-pointer hover:bg-amber-500 transition-all font-semibold uppercase tracking-widest text-sm md:text-base">
-          Shop Now
+          {t('shop_now')}
         </button>
 
       </div>

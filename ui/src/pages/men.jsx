@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 
 const Men = () => {
+  const { t } = useTranslation();
   const [watches, setWatches] = useState([]);
   const [filteredWatches, setFilteredWatches] = useState([]);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -47,8 +49,8 @@ const Men = () => {
 
       <div className="bg-[#050505] min-h-screen text-white pt-32 pb-20 font-sans">
                 <div className="max-w-7xl mx-auto px-6 text-center mb-12">
-          <h1 className="text-[10px] tracking-[0.8em] uppercase text-[#D4AF37] font-bold mb-4">Strength</h1>
-          <h2 className="text-5xl font-serif italic font-light tracking-wider text-white/90">Men's Collection</h2>
+          <h1 className="text-[10px] tracking-[0.8em] uppercase text-[#D4AF37] font-bold mb-4">{t('strength')}</h1>
+          <h2 className="text-5xl font-serif italic font-light tracking-wider text-white/90">{t('men_title')}</h2>
         </div>
 
         <div className="max-w-md mx-auto px-6 mb-12">
@@ -56,7 +58,7 @@ const Men = () => {
             <input 
               type="text" 
               value={searchTerm}
-              placeholder="SEARCH BY MODEL..." 
+              placeholder={t('search_placeholder')}
               className="w-full bg-transparent border-b border-white/10 py-3 text-center text-[11px] tracking-[0.3em] outline-none focus:border-[#D4AF37] transition-all duration-700 placeholder:text-gray-800 uppercase"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -67,11 +69,11 @@ const Men = () => {
         <div className="max-w-7xl mx-auto px-6 mb-20">
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 border-y border-white/5 py-8">
             {[
-              { id: 'all', label: 'All Models' },
-              { id: 'new', label: 'New Arrivals' },
-              { id: 'bestseller', label: 'Best Sellers' },
-              { id: 'low', label: 'Price: Low' },
-              { id: 'high', label: 'Price: High' }
+              { id: 'all', label: t('all_models') } ,
+              { id: 'new', label: t('new_arrivals') },
+              { id: 'bestseller', label: t('best_sellers') },
+              { id: 'low', label: t('price_low') },
+              { id: 'high', label: t('price_high') }
             ].map((filter) => (
               <button
                 key={filter.id}
@@ -100,7 +102,7 @@ const Men = () => {
                       className="w-full h-full object-contain grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                     />
                     {watch.isNew && (
-                      <span className="absolute top-6 left-6 text-[8px] tracking-widest uppercase border border-[#D4AF37] text-[#D4AF37] px-2 py-1 bg-black/40 backdrop-blur-sm">New</span>
+                      <span className="absolute top-6 left-6 text-[8px] tracking-widest uppercase border border-[#D4AF37] text-[#D4AF37] px-2 py-1 bg-black/40 backdrop-blur-sm">{t('new_badge')}</span>
                     )}
                   </div>
                   <div className="mt-10 text-center space-y-3">
@@ -116,7 +118,7 @@ const Men = () => {
               ))
             ) : (
               <div className="col-span-full text-center py-20">
-                <p className="text-gray-600 text-sm tracking-[0.4em] uppercase italic font-light">Matching timepiece not found.</p>
+                <p className="text-gray-600 text-sm tracking-[0.4em] uppercase italic font-light">{t('no_watches')}</p>
               </div>
             )}
           </div>
