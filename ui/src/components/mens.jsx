@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 function Mens() {
   return (
-    <section className='p-2'>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+    <section className='p-2 '>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-2 '>
         <div className='relative overflow-hidden group h-[75vh]'>
           <Link to="/men">
             <img 

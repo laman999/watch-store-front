@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import { Link, NavLink } from 'react-router-dom'
 
 const Men = () => {
   const { t } = useTranslation();
@@ -47,14 +48,14 @@ const Men = () => {
         <title>Men</title>
       </Helmet>
 
-      <div className="bg-[#050505] min-h-screen text-white pt-32 pb-20 font-sans">
+      <div className="bg-[#050505] min-h-screen dark:bg-primary-bg pt-32 pb-20 font-sans transition-colors duration-500">
                 <div className="max-w-7xl mx-auto px-6 text-center mb-12">
           <h1 className="text-[10px] tracking-[0.8em] uppercase text-[#D4AF37] font-bold mb-4">{t('strength')}</h1>
-          <h2 className="text-5xl font-serif italic font-light tracking-wider text-white/90">{t('men_title')}</h2>
+          <h2 className="text-5xl font-serif italic font-light tracking-wider text-white/90 dark:text-black">{t('men_title')}</h2>
         </div>
 
         <div className="max-w-md mx-auto px-6 mb-12">
-          <div className="relative group">
+          <div className="relative group border border-[1px] border-black">
             <input 
               type="text" 
               value={searchTerm}
@@ -95,30 +96,37 @@ const Men = () => {
             {filteredWatches.length > 0 ? (
               filteredWatches.map((watch) => (
                 <div key={watch.id} className="group cursor-pointer">
-                  <div className="relative aspect-[4/5] bg-[#0A0A0A] overflow-hidden flex items-center justify-center p-12 border border-white/5 group-hover:border-white/10 transition-all duration-500">
+                  <div className="relative aspect-[4/5] bg-[#0A0A0A] dark:shadow-2xl dark:bg-white dark:border-[1px] dark:border-amber-200  overflow-hidden flex items-center justify-center p-12 border border-white/5 group-hover:border-white/10 transition-all duration-500">
                     <img 
                       src={watch.image} 
                       alt={watch.name}
                       className="w-full h-full object-contain grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                     />
                     {watch.isNew && (
-                      <span className="absolute top-6 left-6 text-[8px] tracking-widest uppercase border border-[#D4AF37] text-[#D4AF37] px-2 py-1 bg-black/40 backdrop-blur-sm">{t('new_badge')}</span>
+                      <span className="absolute top-6 left-6 text-[8px] font-bold tracking-widest uppercase border border-[#D4AF37] text-[#D4AF37] px-2 py-1 bg-black/40 dark:text-black backdrop-blur-sm">{t('new_badge')}</span>
                     )}
                   </div>
                   <div className="mt-10 text-center space-y-3">
-                    <h3 className="text-[11px] tracking-[0.3em] uppercase text-gray-500 group-hover:text-white transition-colors duration-500">
+                    <h3 className="text-[11px] tracking-[0.3em] uppercase text-gray-500 group-hover:text-white  transition-colors duration-500">
                       {watch.name}
                     </h3>
                     <div className="w-8 h-[1px] bg-[#D4AF37]/30 mx-auto group-hover:w-16 transition-all duration-500"></div>
-                    <p className="text-lg font-serif italic text-white/90">
+                    <p className="text-lg font-serif italic text-white/90 dark:text-black">
                       ${watch.price?.toLocaleString()}
                     </p>
+                  </div>
+                  <div className="mt-8 flex justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-700">
+                    <NavLink to={`/product/${watch.id}`} className="w-full">
+                      <button className="w-full py-4 border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-[#D4AF37] hover:text-black transition-all duration-500 backdrop-blur-sm">
+                     {t('view_details', 'Detallara Bax')}
+                     </button>
+                    </NavLink>
                   </div>
                 </div>
               ))
             ) : (
               <div className="col-span-full text-center py-20">
-                <p className="text-gray-600 text-sm tracking-[0.4em] uppercase italic font-light">{t('no_watches')}</p>
+                <p className="text-gray-600 text-sm tracking-[0.4em] uppercase italic font-light dark:text-black ">{t('no_watches')}</p>
               </div>
             )}
           </div>

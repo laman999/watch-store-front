@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import { Link, NavLink } from 'react-router-dom'
+
 
 const Women = () => {
   const { t } = useTranslation();
@@ -38,24 +40,24 @@ const Women = () => {
         <title>{t('women')}</title>
       </Helmet>
 
-      <div className="bg-[#080707] min-h-screen text-white pt-32 pb-20 font-sans">
+      <div className="bg-[#080707] dark:bg-white min-h-screen text-white pt-32 pb-20 font-sans transition-colors duration-500">
         
         <div className="max-w-7xl mx-auto px-6 text-center mb-12">
-          <h1 className="text-[9px] tracking-[0.9em] uppercase text-[#E5B4A2] font-bold mb-4 opacity-80">
+          <h1 className="text-[9px] tracking-[0.9em] uppercase text-[#E5B4A2] dark:text-black font-bold mb-4 opacity-80">
             {t('elegance')}
           </h1>
-          <h2 className="text-5xl md:text-6xl font-serif italic font-light tracking-widest text-white/90">
+          <h2 className="text-5xl md:text-6xl font-serif italic font-light tracking-widest text-white/90 dark:text-black">
             {t('women_title')} <span className="not-italic opacity-40 font-light text-4xl">{t('women_series')}</span>
           </h2>
         </div>
 
         <div className="max-w-md mx-auto px-6 mb-12">
-          <div className="relative group">
+          <div className="relative group dark:border-[1px] dark:border-black">
             <input 
               type="text" 
               value={searchTerm}
               placeholder={t('discover_pieces')} 
-              className="w-full bg-transparent border-b border-white/5 py-3 text-center text-[10px] tracking-[0.4em] outline-none focus:border-[#E5B4A2] transition-all duration-1000 placeholder:text-gray-800 uppercase font-light"
+              className="w-full bg-transparent border-b border-white/5 py-3 text-center text-[10px] tracking-[0.4em] outline-none focus:border-[#E5B4A2] transition-all duration-1000 placeholder:text-gray-800  dark:text-black uppercase font-light"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#E5B4A2] group-focus-within:w-full transition-all duration-1000"></div>
@@ -90,14 +92,14 @@ const Women = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-24">
             {filteredWatches.map((watch) => (
               <div key={watch.id} className="group cursor-pointer">
-                <div className="relative aspect-[4/5] bg-[#0C0B0B] overflow-hidden flex items-center justify-center p-14 border border-white/[0.02] group-hover:border-[#E5B4A2]/20 transition-all duration-1000 shadow-2xl">
+                <div className="relative aspect-[4/5] bg-[#0C0B0B] dark:bg-white overflow-hidden flex items-center justify-center p-14 border border-white/[0.02] group-hover:border-[#E5B4A2]/20 transition-all duration-1000 shadow-2xl">
                   <img 
                     src={watch.image} 
                     alt={watch.name}
                     className="w-full h-full object-contain transition-all duration-[1.5s] group-hover:scale-105 group-hover:brightness-110"
                   />
                   {watch.isNew && (
-                    <span className="absolute top-8 left-8 text-[7px] tracking-[0.5em] uppercase text-[#E5B4A2] font-bold">
+                    <span className="absolute top-8 left-8 text-[9px] tracking-[0.5em] uppercase text-[#E5B4A2] dark:border-[1px] dark:border-black dark:text-[7px] dark:p-[7px] font-bold">
                       {t('new_badge')}
                     </span>
                   )}
@@ -110,10 +112,17 @@ const Women = () => {
                   <div className="flex items-center justify-center gap-4">
                     <div className="w-[1px] h-4 bg-gradient-to-b from-transparent via-[#E5B4A2]/30 to-transparent"></div>
                   </div>
-                  <p className="text-xl font-serif italic text-white/80 font-light tracking-widest">
+                  <p className="text-xl font-serif italic text-white/80 dark:text-black font-light tracking-widest">
                     ${watch.price?.toLocaleString()}
                   </p>
                 </div>
+                <div className="mt-8 flex justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-700">
+                    <NavLink to={`/product/${watch.id}`} className="w-full">
+                      <button className="w-full py-4 border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-[#D4AF37] hover:text-black transition-all duration-500 backdrop-blur-sm">
+                     {t('view_details', 'Detallara Bax')}
+                     </button>
+                    </NavLink>
+                  </div>
               </div>
             ))}
           </div>

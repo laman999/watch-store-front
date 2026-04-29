@@ -10,7 +10,7 @@ function Header() {
   <div className="relative h-[80vh] w-full overflow-hidden sm:h-[60vh] md:h-[75vh]">
     
     <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover">
-      <source src='/video/watch.mp4' type="video/mp4" />
+      <source src='/video/rolex.mp4' type="video/mp4" />
     </video>
 
     

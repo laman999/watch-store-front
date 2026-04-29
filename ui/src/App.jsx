@@ -10,6 +10,7 @@ import About from './pages/about'
 import Contact from './pages/contact'
 import Register from './pages/register';
 import Login from './pages/login';
+import Detail from './pages/detail';
 
 
 
@@ -31,6 +32,7 @@ function App() {
         <Route element={<Women/>} path='women'/>
         <Route element={<About/>} path='about'/>
         <Route element={<Contact/>} path='contact'/>
+        <Route element={<Detail/>} path='/product/:id' />
       </Route>
        <Route element={<Register/>} path='register'/>
        <Route element={<Login/>} path='login'/>

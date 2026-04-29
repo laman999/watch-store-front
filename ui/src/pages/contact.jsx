@@ -37,12 +37,12 @@ function Contact() {
         <title>{t('contact_title')}</title>
       </Helmet>
 
-      <div className="bg-[#050505] min-h-screen text-white pt-24 pb-16 px-6 font-sans">
+      <div className="bg-[#050505] dark:bg-white min-h-screen text-white pt-24 pb-16 px-6 font-sans  transition-colors duration-500">
         <div className="text-center mb-24">
-          <h4 className="text-[#D4AF37] text-[10px] tracking-[0.6em] uppercase mb-6 font-bold">
+          <h4 className="text-[#D4AF37] text-[10px] tracking-[0.6em] uppercase mb-6 font-bold ">
             {t('concierge')}
           </h4>
-          <h1 className="text-5xl md:text-7xl font-serif italic mb-8 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-serif italic mb-8 leading-tight dark:text-black ">
             {t('get_in_touch')}
           </h1>
           <p className="max-w-2xl mx-auto text-gray-400 text-sm md:text-base font-light leading-relaxed">
@@ -58,7 +58,7 @@ function Contact() {
             </div>
             <div>
               <h5 className="text-[#D4AF37] text-[10px] tracking-widest uppercase mb-2">{t('atelier')}</h5>
-              <p className="text-lg font-medium">Rue du Rhône 42</p>
+              <p className="text-lg font-medium dark:text-black">Rue du Rhône 42</p>
               <p className="text-gray-500 text-sm">1204 Geneva, Switzerland</p>
             </div>
           </div>
@@ -68,7 +68,7 @@ function Contact() {
             </div>
             <div>
               <h5 className="text-[#D4AF37] text-[10px] tracking-widest uppercase mb-2">{t('email')}</h5>
-              <p className="text-lg font-medium">concierge@maison-horlogerie.com</p>
+              <p className="text-lg font-medium dark:text-black">concierge@maison-horlogerie.com</p>
             </div>
           </div>
           <div className="flex items-start gap-6 group">
@@ -77,19 +77,19 @@ function Contact() {
             </div>
             <div>
               <h5 className="text-[#D4AF37] text-[10px] tracking-widest uppercase mb-2">{t('telephone')}</h5>
-              <p className="text-lg font-medium">+41 22 555 0123</p>
+              <p className="text-lg font-medium dark:text-black">+41 22 555 0123</p>
               <p className="text-gray-500 text-sm font-light">{t('mon_sat')}</p>
             </div>
           </div>
         </div>
-          <div className="bg-[#0A0A0A] p-10 border border-white/5 shadow-2xl">
+          <div className="bg-[#0A0A0A] dark:bg-white p-10 border border-white/5 shadow-2xl">
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="space-y-2">
                 <label className="text-[#D4AF37] text-[9px] tracking-[0.4em] uppercase font-bold">{t('form_name')}</label>
                 <input 
                   required
                   type="text" 
-                  className="w-full bg-black/50 border border-white/10 p-4 text-sm outline-none focus:border-[#D4AF37]/50 transition-all"
+                  className="w-full bg-black/50 dark:bg-white dark:border-[#D4AF37]/50 dark:border-[1px] border border-white/10 p-4 text-sm outline-none focus:border-[#D4AF37]/50 transition-all"
                 />
               </div>
               <div className="space-y-2">
@@ -97,7 +97,7 @@ function Contact() {
                 <input 
                   required
                   type="email" 
-                  className="w-full bg-black/50 border border-white/10 p-4 text-sm outline-none focus:border-[#D4AF37]/50 transition-all"
+                  className="w-full bg-black/50 border dark:bg-white dark:border-[#D4AF37]/50 dark:border-[1px] border-white/10 p-4 text-sm outline-none focus:border-[#D4AF37]/50 transition-all"
                 />
               </div>
               <div className="space-y-2">
@@ -105,7 +105,7 @@ function Contact() {
                 <textarea 
                   required
                   rows="4"
-                  className="w-full bg-black/50 border border-white/10 p-4 text-sm outline-none focus:border-[#D4AF37]/50 transition-all resize-none"
+                  className="w-full bg-black/50 border  border-white/10 dark:bg-white dark:border-[#D4AF37]/50 dark:border-[1px] p-4 text-sm outline-none focus:border-[#D4AF37]/50 transition-all resize-none"
                 ></textarea>
               </div>
               <button 

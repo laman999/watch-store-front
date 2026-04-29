@@ -94,7 +94,9 @@ resources: {
     "form_message": "Message",
     "send_button": "Send Message",
     "toast_success": "Your message has been sent!",
-
+    "best_seller":"Best Sellers",
+    "desc_men":"A masterpiece of horological engineering, this timepiece represents the perfect synergy between robust functionality and timeless elegance. Crafted from high-grade 18K gold and scratch-resistant sapphire crystal, it features a sophisticated automatic movement with a 72-hour power reserve. Designed for the modern gentleman who values precision and prestige.",
+    "desc_women" : "Embodying ultimate femininity and grace, this exquisite timepiece is more than a watch—it is a piece of fine jewelry. Featuring a delicate mother-of-pearl dial and a bezel meticulously hand-set with brilliant-cut diamonds, it is powered by a high-precision Swiss movement. A symbol of luxury and sophistication that complements every elegant silhouette."
     }
   },
   az: {
@@ -179,6 +181,9 @@ resources: {
     "form_message": "Mesajınız",
     "send_button": "Mesajı Göndər",
     "toast_success": "Mesajınız uğurla göndərildi!",
+    "best_seller":"ən çox satılanlar",
+    "desc_men": "Saat sənətinin şah əsəri olan bu model, möhkəm funksionallıq və zamansız zəriflik arasındakı mükəmməl sintezi təmsil edir. Yüksək keyfiyyətli 18K qızıl və cızılmaya davamlı sapfir şüşədən hazırlanmış bu saat, 72 saatlıq güc ehtiyatına malik mürəkkəb avtomatik mexanizmlə təchiz olunub. Dəqiqlik və prestijə dəyər verən müasir bəylər üçün hazırlanmışdır.",
+    "desc_women":"Zərifliyin və nəfisliyin təcəssümü olan bu möhtəşəm saat sadəcə bir zaman ölçən cihaz deyil, incə bir zərgərlik nümunəsidir. Sədəf siferblat və brilyant kəsimli almazlarla əllə işlənmiş çərçivəyə malik olan bu model, yüksək dəqiqlikli İsveçrə mexanizmi ilə işləyir. Hər bir zərif obrazı tamamlayan lüks və kübarlıq rəmzidir."
     }
   },
   ru: {
@@ -266,6 +271,10 @@ resources: {
     "form_message": "Сообщение",
     "send_button": "Отправить сообщение",
     "toast_success": "Ваше сообщение было отправлено!",
+        "best_seller":"бестселлеры",
+        "desc_men": "Шедевр часового искусства, эти часы представляют собой идеальное сочетание надежной функциональности и вневременной элегантности. Изготовленные из высококачественного 18-каратного золота и устойчивого к царапинам сапфирового стекла, они оснащены сложным автоматическим механизмом с 72-часовым запасом хода. Созданы для современного джентльмена, который ценит точность и престиж.",
+        "desc_women": "Воплощение абсолютной женственности и изящества, эти изысканные часы — больше чем просто аксессуар, это настоящее ювелирное украшение. Модель с нежным перламутровым циферблатом и безелем, вручную инкрустированным бриллиантами классической огранки, оснащена высокоточным швейцарским механизмом. Символ роскоши и утонченности, дополняющий любой элегантный образ."
+
     }
   }
 }

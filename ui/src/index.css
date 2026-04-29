@@ -1,4 +1,19 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+
+       /* light mode ucun */
+  --color-primary-bg: #F5F5F5;  
+  --color-primary-text: #1A1A1A; 
+  --color-gold: #D4AF37;
+
+     /* dark  */
+     --color-primary-bg-dark: #050505;
+  --color-primary-text-dark: #FFFFFF;
+}
+
 .elegance{
    font-family: "Poppins", sans-serif;
   font-weight: 50;

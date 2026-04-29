@@ -1,12 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { IoIosLogOut } from "react-icons/io";
 import { CiLogin } from "react-icons/ci";
 import { LuShoppingBag } from "react-icons/lu";
 import { AiOutlineLike } from "react-icons/ai";
 import { useTranslation } from 'react-i18next';
+import { HiMoon, HiSun } from 'react-icons/hi';
 
 function Navbar() {
+  const [isDark, setIsDark] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDark]);
+  const toggleDarkMode = () => {
+    setIsDark(!isDark);
+  };
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   let id = localStorage.getItem("id");
@@ -21,7 +37,7 @@ function Navbar() {
   };
 
   return (
-    <nav className='bg-black text-amber-300 p-3 md:p-4 flex justify-between items-center shadow-lg  top-0 z-[100] border-b border-amber-900/20'>
+    <nav className='bg-black text-amber-300 p-3 md:p-4 flex justify-between items-center shadow-lg   top-0 z-[100] border-b border-amber-900/20'>
       
       <div className='flex items-center flex-shrink-0'>
         <Link to="/">
@@ -52,6 +68,16 @@ function Navbar() {
           <option value="en" className="bg-black text-white">EN</option>
           <option value="ru" className="bg-black text-white">RU</option>
         </select>
+        <button 
+      onClick={toggleDarkMode} 
+      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 transition-all cursor-pointer"
+    >
+      {isDark ? (
+        <HiSun className="text-[#D4AF37] text-xl" /> 
+      ) : (
+        <HiMoon className="text-gray-600 text-xl" /> 
+      )}
+    </button>
 
         <div className='flex items-center gap-3 md:gap-4 border-l border-white/10 pl-3 md:pl-6'>
           <Link to="/cart" className='text-[20px] hover:scale-110 transition'><LuShoppingBag /></Link>
