@@ -11,6 +11,9 @@ import Contact from './pages/contact'
 import Register from './pages/register';
 import Login from './pages/login';
 import Detail from './pages/detail';
+import Cart from './pages/cart';
+import Checkout from './pages/checkout';
+import Favorites from './pages/favorites';
 
 
 
@@ -33,6 +36,9 @@ function App() {
         <Route element={<About/>} path='about'/>
         <Route element={<Contact/>} path='contact'/>
         <Route element={<Detail/>} path='/product/:id' />
+        <Route element={<Cart/>} path='cart'/>
+        <Route element={<Checkout/>} path='checkout'/>
+        <Route element={<Favorites/>} path='favorites'/>
       </Route>
        <Route element={<Register/>} path='register'/>
        <Route element={<Login/>} path='login'/>

@@ -13,9 +13,16 @@
       "pass": "1234",
       "email": "manafova1@gmail.com",
       "id": "GuQtFiMk9yE"
+    },
+    {
+      "name": "leman",
+      "surname": "menefova",
+      "pass": "6789",
+      "email": "leman@gmail.com",
+      "id": "4_OQBoEvl48"
     }
   ],
-  "products" : [
+  "products": [
     {
       "id": "1",
       "name": "TISSOT PRX 40MM",

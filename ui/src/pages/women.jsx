@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Link, NavLink } from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom';
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 const Women = () => {
   const { t } = useTranslation();
@@ -11,6 +11,27 @@ const Women = () => {
   const [filteredWatches, setFilteredWatches] = useState([]);
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+
+  const [favorites, setFavorites] = useState(() => {
+    const saved = localStorage.getItem("favorites");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const toggleFavorite = (watch) => {
+    let favs = [...favorites];
+    const index = favs.findIndex(item => item.id === watch.id);
+
+    if (index !== -1) {
+      favs.splice(index, 1);
+    } else {
+      favs.push(watch);
+    }
+
+    setFavorites(favs);
+    localStorage.setItem("favorites", JSON.stringify(favs));
+    
+    window.dispatchEvent(new Event("favoritesUpdated"));
+  };
 
   useEffect(() => {
     fetch('http://localhost:3000/products')
@@ -37,7 +58,7 @@ const Women = () => {
   return (
     <div>
       <Helmet>
-        <title>{t('women')}</title>
+        <title>Women</title>
       </Helmet>
 
       <div className="bg-[#080707] dark:bg-white min-h-screen text-white pt-32 pb-20 font-sans transition-colors duration-500">
@@ -57,7 +78,7 @@ const Women = () => {
               type="text" 
               value={searchTerm}
               placeholder={t('discover_pieces')} 
-              className="w-full bg-transparent border-b border-white/5 py-3 text-center text-[10px] tracking-[0.4em] outline-none focus:border-[#E5B4A2] transition-all duration-1000 placeholder:text-gray-800  dark:text-black uppercase font-light"
+              className="w-full bg-transparent border-b border-white/5 py-3 text-center text-[10px] tracking-[0.4em] outline-none focus:border-[#E5B4A2] transition-all duration-1000 placeholder:text-gray-800 dark:text-black uppercase font-light"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#E5B4A2] group-focus-within:w-full transition-all duration-1000"></div>
@@ -77,7 +98,7 @@ const Women = () => {
                 key={f.id}
                 onClick={() => setActiveFilter(f.id)}
                 className={`text-[9px] uppercase tracking-[0.4em] transition-all duration-700 relative pb-1
-                  ${activeFilter === f.id ? 'text-[#E5B4A2]' : 'text-gray-600 hover:text-white'}`}
+                  ${activeFilter === f.id ? 'text-[#E5B4A2]' : 'text-gray-600 hover:text-white dark:text-gray-400 dark:hover:text-black'}`}
               >
                 {f.label}
                 {activeFilter === f.id && (
@@ -91,7 +112,19 @@ const Women = () => {
         <div className="max-w-7xl mx-auto px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-24">
             {filteredWatches.map((watch) => (
-              <div key={watch.id} className="group cursor-pointer">
+              <div key={watch.id} className="group relative">
+
+                <div 
+                  onClick={() => toggleFavorite(watch)}
+                  className="absolute top-6 right-6 z-30 cursor-pointer text-2xl transition-all duration-300 hover:scale-125"
+                >
+                  {favorites.find(item => item.id === watch.id) ? (
+                    <AiFillHeart className="text-[#E5B4A2]" /> 
+                  ) : (
+                    <AiOutlineHeart className="text-gray-600 hover:text-[#E5B4A2]" />
+                  )}
+                </div>
+
                 <div className="relative aspect-[4/5] bg-[#0C0B0B] dark:bg-white overflow-hidden flex items-center justify-center p-14 border border-white/[0.02] group-hover:border-[#E5B4A2]/20 transition-all duration-1000 shadow-2xl">
                   <img 
                     src={watch.image} 
@@ -116,13 +149,14 @@ const Women = () => {
                     ${watch.price?.toLocaleString()}
                   </p>
                 </div>
+
                 <div className="mt-8 flex justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-700">
                     <NavLink to={`/product/${watch.id}`} className="w-full">
-                      <button className="w-full py-4 border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-[#D4AF37] hover:text-black transition-all duration-500 backdrop-blur-sm">
-                     {t('view_details', 'Detallara Bax')}
-                     </button>
+                      <button className="w-full py-4 border border-[#E5B4A2]/30 text-[#E5B4A2] text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-[#E5B4A2] hover:text-black transition-all duration-500 backdrop-blur-sm">
+                       {t('view_details')}
+                      </button>
                     </NavLink>
-                  </div>
+                </div>
               </div>
             ))}
           </div>

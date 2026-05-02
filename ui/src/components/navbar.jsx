@@ -8,6 +8,25 @@ import { useTranslation } from 'react-i18next';
 import { HiMoon, HiSun } from 'react-icons/hi';
 
 function Navbar() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const updateCart = () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+      setCount(total);
+    };
+
+    updateCart();
+
+    window.addEventListener("cartUpdated", updateCart);
+
+    return () => {
+      window.removeEventListener("cartUpdated", updateCart);
+    };
+  }, []);
+
+  
   const [isDark, setIsDark] = useState(() => {
     return localStorage.getItem('theme') === 'dark';
   });
@@ -37,7 +56,7 @@ function Navbar() {
   };
 
   return (
-    <nav className='bg-black text-amber-300 p-3 md:p-4 flex justify-between items-center shadow-lg   top-0 z-[100] border-b border-amber-900/20'>
+    <nav className='bg-black  text-amber-300 p-3 md:p-4 flex justify-between items-center shadow-lg   top-0 z-[100] border-b border-amber-900/20'>
       
       <div className='flex items-center flex-shrink-0'>
         <Link to="/">
@@ -80,7 +99,13 @@ function Navbar() {
     </button>
 
         <div className='flex items-center gap-3 md:gap-4 border-l border-white/10 pl-3 md:pl-6'>
-          <Link to="/cart" className='text-[20px] hover:scale-110 transition'><LuShoppingBag /></Link>
+          <Link to="/cart" className='text-[20px] hover:scale-110 transition relative text-2xl'><LuShoppingBag />
+           {count > 0 && (
+        <span className="absolute -top-2 -right-3 bg-red-500 text-white text-[10px] px-2 py-1 rounded-full">
+          {count}
+        </span>
+      )}
+          </Link>
           
           <Link to="/favorites" className='text-[20px] hover:scale-110 transition'><AiOutlineLike /></Link>
           
