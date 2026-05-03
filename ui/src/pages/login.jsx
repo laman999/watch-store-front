@@ -13,26 +13,33 @@ function Login() {
   const [passVal, setPassVal] = useState(false)
   const [succes, setSucces] = useState(false)
   let navigate = useNavigate()
-  const singIn = (e)=>{
+  const singIn = (e) => {
     e.preventDefault()
-    if(user.email && user.pass){
+    
+    if (!user.email) setEmailVal(true)
+    if (!user.pass) setPassVal(true)
+
+    if (user.email && user.pass) {
+      if (user.email === "admin@mail.com" && user.pass === "admin123") {
+        localStorage.setItem("role", "admin");
+        localStorage.setItem("id", "admin_global");
+        navigate("/admin");
+        return; 
+      }
+
       fetch("http://localhost:3000/users")
-     .then(res=>res.json())
-     .then(data=>{
-        let founded = data.find(e=>e.email == user.email)
-        if(founded && founded.pass ==user.pass){
-          localStorage.setItem("id", founded.id)
-          navigate("/")
-        }else{
-          setSucces(true)
-        }
-     })
-    }
-    if(!user.email){
-      setEmailVal(true)
-    }
-    if(!user.pass){
-      setPassVal(true)
+        .then(res => res.json())
+        .then(data => {
+          let founded = data.find(e => e.email == user.email)
+          
+          if (founded && founded.pass == user.pass) {
+            localStorage.setItem("id", founded.id)
+            localStorage.setItem("role", "user")
+            navigate("/")
+          } else {
+            setSucces(true)
+          }
+        })
     }
   }
   return (

@@ -18,13 +18,20 @@ const Women = () => {
   });
 
   const toggleFavorite = (watch) => {
+    const userId = localStorage.getItem("id");
+    
+    if (!userId) {
+      alert("Favoritlərinizə əlavə etmək üçün öncə giriş edin!");
+      return;
+    }
+
     let favs = [...favorites];
-    const index = favs.findIndex(item => item.id === watch.id);
+    const index = favs.findIndex(item => item.id === watch.id && item.userId === userId);
 
     if (index !== -1) {
       favs.splice(index, 1);
     } else {
-      favs.push(watch);
+      favs.push({ ...watch, userId: userId });
     }
 
     setFavorites(favs);
@@ -118,7 +125,7 @@ const Women = () => {
                   onClick={() => toggleFavorite(watch)}
                   className="absolute top-6 right-6 z-30 cursor-pointer text-2xl transition-all duration-300 hover:scale-125"
                 >
-                  {favorites.find(item => item.id === watch.id) ? (
+                  {favorites.find(item => item.id === watch.id && item.userId === localStorage.getItem("id")) ? (
                     <AiFillHeart className="text-[#E5B4A2]" /> 
                   ) : (
                     <AiOutlineHeart className="text-gray-600 hover:text-[#E5B4A2]" />

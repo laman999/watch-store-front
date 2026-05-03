@@ -14,6 +14,8 @@ import Detail from './pages/detail';
 import Cart from './pages/cart';
 import Checkout from './pages/checkout';
 import Favorites from './pages/favorites';
+import Admin from './pages/Admin';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 
@@ -37,11 +39,17 @@ function App() {
         <Route element={<Contact/>} path='contact'/>
         <Route element={<Detail/>} path='/product/:id' />
         <Route element={<Cart/>} path='cart'/>
-        <Route element={<Checkout/>} path='checkout'/>
         <Route element={<Favorites/>} path='favorites'/>
+        <Route element={<Checkout/>} path='checkout'/>
       </Route>
        <Route element={<Register/>} path='register'/>
        <Route element={<Login/>} path='login'/>
+       <Route  path="/admin"  element={
+         <ProtectedRoute>
+           <Admin />
+         </ProtectedRoute>
+       } 
+/>
 
     </Routes>
     </BrowserRouter>

@@ -9,13 +9,6 @@
     },
     {
       "name": "leman",
-      "surname": "manafova",
-      "pass": "1234",
-      "email": "manafova1@gmail.com",
-      "id": "GuQtFiMk9yE"
-    },
-    {
-      "name": "leman",
       "surname": "menefova",
       "pass": "6789",
       "email": "leman@gmail.com",
@@ -131,16 +124,6 @@
       "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwc6e52aea/product-pictures/d33ecd71-f2b4-4d95-9eca-2dcd40e0ec25_T116-617-16-047-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
       "isNew": true,
       "isBestSeller": true,
-      "description": "A masterpiece of horological engineering, this timepiece represents the perfect synergy between robust functionality and timeless elegance. Crafted from high-grade 18K gold and scratch-resistant sapphire crystal, it features a sophisticated automatic movement with a 72-hour power reserve. Designed for the modern gentleman who values precision and prestige."
-    },
-    {
-      "id": "12",
-      "name": "Tissot Seastar 1000 43mm",
-      "category": "men",
-      "price": 35078,
-      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw45f1dd0a/product-pictures/c40959ea-db66-4297-b91b-63cb686c1cf5_T137-207-11-041-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
-      "isNew": false,
-      "isBestSeller": false,
       "description": "A masterpiece of horological engineering, this timepiece represents the perfect synergy between robust functionality and timeless elegance. Crafted from high-grade 18K gold and scratch-resistant sapphire crystal, it features a sophisticated automatic movement with a 72-hour power reserve. Designed for the modern gentleman who values precision and prestige."
     },
     {
@@ -262,7 +245,15 @@
       "isNew": false,
       "isBestSeller": true,
       "description": "Embodying ultimate femininity and grace, this exquisite timepiece is more than a watch—it is a piece of fine jewelry. Featuring a delicate mother-of-pearl dial and a bezel meticulously hand-set with brilliant-cut diamonds, it is powered by a high-precision Swiss movement. A symbol of luxury and sophistication that complements every elegant silhouette."
+    },
+    {
+      "name": "Tissot Seastar 1000 40mm",
+      "price": "875.00",
+      "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw5e506deb/product-pictures/f6c32052-af0a-4c68-8245-e4ef5609f244_T120_807_11_051_00.png",
+      "category": "men",
+      "id": "htD-b1JRZUI"
     }
   ],
+  "orders": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

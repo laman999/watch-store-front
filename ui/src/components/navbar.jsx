@@ -9,27 +9,39 @@ import { HiMoon, HiSun } from 'react-icons/hi';
 
 function Navbar() {
   const [count, setCount] = useState(0);
+  const { t, i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  
+  const id = localStorage.getItem("id");
 
   useEffect(() => {
     const updateCart = () => {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const total = cart.reduce((sum, item) => sum + item.quantity, 0);
-      setCount(total);
+      const userId = localStorage.getItem("id");
+      if (userId) {
+        const allCartData = JSON.parse(localStorage.getItem("cart")) || [];  
+        const userSpecificCart = allCartData.filter(item => item.userId === userId);      
+        const total = userSpecificCart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        setCount(total);
+      } else {
+        setCount(0);
+      }
     };
 
     updateCart();
 
     window.addEventListener("cartUpdated", updateCart);
+    window.addEventListener("storage", updateCart);
 
     return () => {
       window.removeEventListener("cartUpdated", updateCart);
+      window.removeEventListener("storage", updateCart);
     };
   }, []);
 
-  
   const [isDark, setIsDark] = useState(() => {
     return localStorage.getItem('theme') === 'dark';
   });
+
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');
@@ -39,12 +51,8 @@ function Navbar() {
       localStorage.setItem('theme', 'light');
     }
   }, [isDark]);
-  const toggleDarkMode = () => {
-    setIsDark(!isDark);
-  };
-  const { t, i18n } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-  let id = localStorage.getItem("id");
+
+  const toggleDarkMode = () => setIsDark(!isDark);
 
   const handleLangChange = (e) => {
     i18n.changeLanguage(e.target.value);
@@ -56,8 +64,7 @@ function Navbar() {
   };
 
   return (
-    <nav className='bg-black  text-amber-300 p-3 md:p-4 flex justify-between items-center shadow-lg   top-0 z-[100] border-b border-amber-900/20'>
-      
+    <nav className='bg-black text-amber-300 p-3 md:p-4 flex justify-between items-center shadow-lg  top-0 z-[100] border-b border-amber-900/20'>
       <div className='flex items-center flex-shrink-0'>
         <Link to="/">
           <img 
@@ -77,7 +84,6 @@ function Navbar() {
       </div>
 
       <div className='flex items-center gap-2 md:gap-6'>
-        
         <select 
           value={i18n.language} 
           onChange={handleLangChange}
@@ -87,24 +93,19 @@ function Navbar() {
           <option value="en" className="bg-black text-white">EN</option>
           <option value="ru" className="bg-black text-white">RU</option>
         </select>
-        <button 
-      onClick={toggleDarkMode} 
-      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 transition-all cursor-pointer"
-    >
-      {isDark ? (
-        <HiSun className="text-[#D4AF37] text-xl" /> 
-      ) : (
-        <HiMoon className="text-gray-600 text-xl" /> 
-      )}
-    </button>
+
+        <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-white/10 transition-all cursor-pointer">
+          {isDark ? <HiSun className="text-[#D4AF37] text-xl" /> : <HiMoon className="text-gray-600 text-xl" />}
+        </button>
 
         <div className='flex items-center gap-3 md:gap-4 border-l border-white/10 pl-3 md:pl-6'>
-          <Link to="/cart" className='text-[20px] hover:scale-110 transition relative text-2xl'><LuShoppingBag />
-           {count > 0 && (
-        <span className="absolute -top-2 -right-3 bg-red-500 text-white text-[10px] px-2 py-1 rounded-full">
-          {count}
-        </span>
-      )}
+          <Link to="/cart" className='hover:scale-110 transition relative text-2xl'>
+            <LuShoppingBag />
+            {count > 0 && (
+              <span className="absolute -top-2 -right-3 bg-red-600 text-white text-[10px] font-bold min-w-[18px] h-[18px] flex items-center justify-center rounded-full px-1">
+                {count}
+              </span>
+            )}
           </Link>
           
           <Link to="/favorites" className='text-[20px] hover:scale-110 transition'><AiOutlineLike /></Link>
@@ -116,10 +117,7 @@ function Navbar() {
           )}
         </div>
           
-        <button 
-          onClick={() => setIsOpen(!isOpen)} 
-          className='md:hidden text-2xl ml-2'
-        >
+        <button onClick={() => setIsOpen(!isOpen)} className='md:hidden text-2xl ml-2'>
           {isOpen ? '✕' : '☰'} 
         </button>
       </div>
@@ -133,8 +131,8 @@ function Navbar() {
         <NavLink to="/women" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-widest text-sm py-2 border-b border-white/5'>{t('women')}</NavLink>
         <NavLink to="/about" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-widest text-sm py-2 border-b border-white/5'>{t('about')}</NavLink>
         <NavLink to="/contact" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-widest text-sm py-2'>{t('contact')}</NavLink>
+        
       </div>
-      
     </nav>
   )
 }

@@ -17,18 +17,24 @@ const Men = () => {
   });
 
   const toggleFavorite = (watch) => {
+    const userId = localStorage.getItem("id");
+    
+    if (!userId) {
+      alert("Favoritlərinizə əlavə etmək üçün öncə giriş edin!");
+      return;
+    }
+
     let favs = [...favorites];
-    const index = favs.findIndex(item => item.id === watch.id);
+    const index = favs.findIndex(item => item.id === watch.id && item.userId === userId);
 
     if (index !== -1) {
       favs.splice(index, 1);
     } else {
-      favs.push(watch); 
+      favs.push({ ...watch, userId: userId });
     }
 
     setFavorites(favs);
     localStorage.setItem("favorites", JSON.stringify(favs));
-    
     window.dispatchEvent(new Event("favoritesUpdated"));
   };
 
@@ -73,7 +79,7 @@ const Men = () => {
       <div className="bg-[#050505] min-h-screen dark:bg-primary-bg pt-32 pb-20 font-sans transition-colors duration-500">
         <div className="max-w-7xl mx-auto px-6 text-center mb-12">
           <h1 className="text-[10px] tracking-[0.8em] uppercase text-[#D4AF37] font-bold mb-4">{t('strength')}</h1>
-          <h2 className="text-5xl font-serif italic uppercase font-light tracking-wider text-white/90 dark:text-black">{t('men_title')}</h2>
+          <h2 className="text-4xl font-serif italic uppercase font-light tracking-wider text-white/90 dark:text-black">{t('men_title')}</h2>
         </div>
 
         <div className="max-w-md mx-auto px-6 mb-12">
@@ -122,7 +128,7 @@ const Men = () => {
                     onClick={() => toggleFavorite(watch)}
                     className="absolute top-4 right-4 z-30 cursor-pointer text-2xl transition-all duration-300 hover:scale-125 p-2"
                   >
-                    {favorites.find(item => item.id === watch.id) ? (
+                    {favorites.find(item => item.id === watch.id && item.userId === localStorage.getItem("id")) ? (
                       <AiFillHeart className="text-[#D4AF37]" /> 
                     ) : (
                       <AiOutlineHeart className="text-gray-600 hover:text-white" /> 
