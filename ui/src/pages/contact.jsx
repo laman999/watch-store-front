@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Bounce, ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -6,11 +6,29 @@ import { useTranslation } from 'react-i18next';
 
 function Contact() {
   const { t } = useTranslation();
+  const [formData, setFormData] = useState({
+    name:'',
+    email:'',
+    message:''
 
-  const handleSubmit = (e) => {
+  });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const newMessage = {
+      ...formData,
+      date: new Date().toLocaleString(),
+      status:"Oxunmayıb"
+    };
+    try {
+      const res = await fetch("http://localhost:3000/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newMessage)
+      });
     
-    toast.success(t('toast_success'), {
+   if(res.ok){
+     toast.success(t('toast_success'), {
       position: "top-center",
       autoClose: 3000,
       hideProgressBar: true,
@@ -21,7 +39,12 @@ function Contact() {
       theme: "dark",
       transition: Bounce,
     });
-    e.target.reset();
+    setFormData({ name: '', email: '', message: '' });
+   }
+   } catch (err) {
+      toast.error("Xəta baş verdi, yenidən yoxlayın.");
+      console.error("Mesaj göndərilərkən xəta:", err);
+    }
   };
 
   return (
@@ -37,7 +60,7 @@ function Contact() {
         <title>{t('contact_title')}</title>
       </Helmet>
 
-      <div className="bg-[#050505] dark:bg-white min-h-screen text-white pt-24 pb-16 px-6 font-sans  transition-colors duration-500">
+      <div className="bg-[#050505] dark:bg-white min-h-screen text-white dark:text-black pt-24 pb-16 px-6 font-sans  transition-colors duration-500">
         <div className="text-center mb-24">
           <h4 className="text-[#D4AF37] text-[10px] tracking-[0.6em] uppercase mb-6 font-bold ">
             {t('concierge')}
@@ -89,6 +112,8 @@ function Contact() {
                 <input 
                   required
                   type="text" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
                   className="w-full bg-black/50 dark:bg-white dark:border-[#D4AF37]/50 dark:border-[1px] border border-white/10 p-4 text-sm outline-none focus:border-[#D4AF37]/50 transition-all"
                 />
               </div>
@@ -97,6 +122,8 @@ function Contact() {
                 <input 
                   required
                   type="email" 
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
                   className="w-full bg-black/50 border dark:bg-white dark:border-[#D4AF37]/50 dark:border-[1px] border-white/10 p-4 text-sm outline-none focus:border-[#D4AF37]/50 transition-all"
                 />
               </div>
@@ -105,6 +132,8 @@ function Contact() {
                 <textarea 
                   required
                   rows="4"
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
                   className="w-full bg-black/50 border  border-white/10 dark:bg-white dark:border-[#D4AF37]/50 dark:border-[1px] p-4 text-sm outline-none focus:border-[#D4AF37]/50 transition-all resize-none"
                 ></textarea>
               </div>

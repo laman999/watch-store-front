@@ -5,15 +5,17 @@ import {
   AiOutlineUnorderedList, 
   AiOutlineLogout, 
   AiOutlineDelete,
-  AiOutlineShopping 
+  AiOutlineShopping,
+  AiOutlineMail
 } from 'react-icons/ai';
 
 const Admin = () => {
   const navigate = useNavigate();
-    const [activeTab, setActiveTab] = useState('add'); 
+  const [activeTab, setActiveTab] = useState('add'); 
   const [products, setProducts] = useState([]);      
   const [orders, setOrders] = useState([]); 
-  const [editingId, setEditingId] = useState(null); 
+  const [editingId, setEditingId] = useState(null);
+  const [messages, setMessages] = useState([]); 
   const [newProduct, setNewProduct] = useState({     
     name: '',
     price: '',
@@ -41,10 +43,29 @@ const Admin = () => {
     }
   };
 
+  const fetchMesages = async() =>{
+  try{
+    const res = await fetch("http://localhost:3000/messages");
+    const data = await res.json();
+    setMessages(data.reverse());
+  } catch (err) { 
+      console.error("Mesajlar gətirilərkən xəta:", err);
+  }    
+  }
+
+
   useEffect(() => {
     fetchProducts();
     fetchOrders();
+    fetchMesages();
   }, [activeTab]);
+
+  const deleteMessage = async (id) => {
+    if (window.confirm("Bu mesajı silmək istədiyinizə əminsiniz?")) {
+      await fetch(`http://localhost:3000/messages/${id}`, { method: "DELETE" });
+      setMessages(messages.filter(m => m.id !== id));
+    }
+  };
 
   const startEdit = (product) => {
     setEditingId(product.id);
@@ -145,6 +166,9 @@ const Admin = () => {
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-[10px] tracking-widest uppercase ${activeTab === 'orders' ? 'bg-[#D4AF37] text-black font-bold' : 'hover:bg-white/5 text-gray-400'}`}
           >
             <AiOutlineShopping size={18} /> Sifarişlər
+          </button>
+          <button onClick={() => setActiveTab('messages')} className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-[10px] tracking-widest uppercase ${activeTab === 'messages' ? 'bg-[#D4AF37] text-black font-bold' : 'hover:bg-white/5 text-gray-400'}`}>
+            <AiOutlineMail size={18} /> Mesajlar
           </button>
         </nav>
 
@@ -302,7 +326,39 @@ const Admin = () => {
             </div>
           </div>
         )}
-
+        {activeTab === 'messages' && (
+          <div className="w-full animate-fadeIn">
+            <h1 className="text-2xl font-serif italic text-[#D4AF37] mb-8 uppercase tracking-widest">Müştəri Mesajları</h1>
+            <div className="bg-[#0A0A0A] border border-white/5 rounded-xl overflow-hidden">
+              <table className="w-full text-left">
+                <thead className="bg-white/[0.02] border-b border-white/5 uppercase text-[10px] tracking-widest text-gray-500">
+                  <tr>
+                    <th className="p-4">Müştəri</th>
+                    <th className="p-4">Email</th>
+                    <th className="p-4">Mesaj</th>
+                    <th className="p-4">Tarix</th>
+                    <th className="p-4 text-right">Sil</th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm">
+                  {messages.map(msg => (
+                    <tr key={msg.id} className="border-b border-white/5 hover:bg-white/[0.01]">
+                      <td className="p-4 text-white font-medium">{msg.name}</td>
+                      <td className="p-4 text-gray-400">{msg.email}</td>
+                      <td className="p-4 max-w-xs truncate italic">"{msg.message}"</td>
+                      <td className="p-4 text-[10px] text-gray-500">{msg.date}</td>
+                      <td className="p-4 text-right">
+                        <button onClick={() => deleteMessage(msg.id)} className="text-gray-600 hover:text-red-500 transition-all">
+                          <AiOutlineDelete size={18} />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

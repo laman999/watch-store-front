@@ -1,18 +1,25 @@
 {
   "users": [
     {
-      "name": "nisa",
-      "surname": "mammedova",
-      "pass": "1234",
-      "email": "nisa@gmail.com",
-      "id": "67Gk02sszQg"
-    },
-    {
       "name": "leman",
       "surname": "menefova",
       "pass": "6789",
       "email": "leman@gmail.com",
       "id": "4_OQBoEvl48"
+    },
+    {
+      "name": "leman",
+      "surname": "menefova",
+      "pass": "0000",
+      "email": "lemanmanafova@gmail.com",
+      "id": "eTgpnrkUw3Q"
+    },
+    {
+      "name": "aysun",
+      "surname": "alekberova",
+      "pass": "2345",
+      "email": "a.aysun@gmail.com",
+      "id": "io6pl8uVObQ"
     }
   ],
   "products": [
@@ -254,6 +261,194 @@
       "id": "htD-b1JRZUI"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "fullName": "leman",
+      "cardNumber": "111111111111",
+      "expiry": "1111",
+      "cvv": "111",
+      "address": "xezer",
+      "totalPrice": 72634,
+      "orderId": "525487",
+      "orderDate": "5/6/2026, 12:34:23 AM",
+      "status": "Ləğv edildi",
+      "items": [
+        {
+          "id": "18",
+          "name": "Tissot SRV 30mm",
+          "category": "women",
+          "price": 72634,
+          "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw92cdce27/product-pictures/5fe6a127-30fc-47ae-b97c-37229e5e8f7c_T160-110-16-423-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+          "isNew": false,
+          "isBestSeller": true,
+          "description": "Embodying ultimate femininity and grace, this exquisite timepiece is more than a watch—it is a piece of fine jewelry. Featuring a delicate mother-of-pearl dial and a bezel meticulously hand-set with brilliant-cut diamonds, it is powered by a high-precision Swiss movement. A symbol of luxury and sophistication that complements every elegant silhouette.",
+          "userId": "admin_global",
+          "quantity": 1
+        }
+      ],
+      "id": "5ip5S1WTSG0"
+    },
+    {
+      "fullName": "nise",
+      "cardNumber": "234932434985",
+      "expiry": "1234",
+      "cvv": "123",
+      "address": "baki",
+      "totalPrice": 290536,
+      "orderId": "926573",
+      "orderDate": "5/6/2026, 12:36:18 AM",
+      "status": "Kuryerdə",
+      "items": [
+        {
+          "id": "18",
+          "name": "Tissot SRV 30mm",
+          "category": "women",
+          "price": 72634,
+          "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw92cdce27/product-pictures/5fe6a127-30fc-47ae-b97c-37229e5e8f7c_T160-110-16-423-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+          "isNew": false,
+          "isBestSeller": true,
+          "description": "Embodying ultimate femininity and grace, this exquisite timepiece is more than a watch—it is a piece of fine jewelry. Featuring a delicate mother-of-pearl dial and a bezel meticulously hand-set with brilliant-cut diamonds, it is powered by a high-precision Swiss movement. A symbol of luxury and sophistication that complements every elegant silhouette.",
+          "userId": "admin_global",
+          "quantity": 4
+        }
+      ],
+      "id": "tuFQWoEEqxQ"
+    },
+    {
+      "fullName": "aysun",
+      "cardNumber": "2874293754",
+      "expiry": "1111",
+      "cvv": "111",
+      "address": "bineqedi",
+      "totalPrice": 334568,
+      "orderId": "126534",
+      "orderDate": "5/6/2026, 12:42:48 AM",
+      "status": "Ləğv edildi",
+      "items": [
+        {
+          "id": "4",
+          "name": "TISSOT PRC 100 Solar 39MM",
+          "category": "men",
+          "price": 83642,
+          "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw153df637/product-pictures/684f5860-b5ad-4217-a45f-1d6ad5b6ee8b_T157-407-16-031-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+          "isNew": false,
+          "isBestSeller": false,
+          "description": "A masterpiece of horological engineering, this timepiece represents the perfect synergy between robust functionality and timeless elegance. Crafted from high-grade 18K gold and scratch-resistant sapphire crystal, it features a sophisticated automatic movement with a 72-hour power reserve. Designed for the modern gentleman who values precision and prestige.",
+          "userId": "admin_global",
+          "quantity": 4
+        }
+      ],
+      "id": "Tmp6f56pM2M"
+    },
+    {
+      "fullName": "leman",
+      "cardNumber": "12345678912345",
+      "expiry": "1234",
+      "cvv": "678",
+      "address": "bine",
+      "totalPrice": 276009,
+      "orderId": "913265",
+      "orderDate": "5/6/2026, 12:55:56 AM",
+      "status": "Kuryerdə",
+      "items": [
+        {
+          "id": "23",
+          "name": "Tissot Bellissima 29mm",
+          "category": "women",
+          "price": 23647,
+          "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw699f6ec8/product-pictures/c7bab4f2-7649-496a-9ecd-55aaa53c80f9_T126-207-36-013-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+          "isNew": true,
+          "isBestSeller": true,
+          "description": "Embodying ultimate femininity and grace, this exquisite timepiece is more than a watch—it is a piece of fine jewelry. Featuring a delicate mother-of-pearl dial and a bezel meticulously hand-set with brilliant-cut diamonds, it is powered by a high-precision Swiss movement. A symbol of luxury and sophistication that complements every elegant silhouette.",
+          "userId": "4_OQBoEvl48",
+          "quantity": 2
+        },
+        {
+          "id": "1",
+          "name": "TISSOT PRX 40MM",
+          "category": "men",
+          "price": 45743,
+          "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw2becd257/product-pictures/0b48ea59-e96f-4c95-b952-465ba367e151_T156-410-11-041-00_Shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+          "isNew": false,
+          "isBestSeller": true,
+          "description": "A masterpiece of horological engineering, this timepiece represents the perfect synergy between robust functionality and timeless elegance. Crafted from high-grade 18K gold and scratch-resistant sapphire crystal, it features a sophisticated automatic movement with a 72-hour power reserve. Designed for the modern gentleman who values precision and prestige.",
+          "userId": "4_OQBoEvl48",
+          "quantity": 5
+        }
+      ],
+      "id": "SEP6CPvzQig"
+    },
+    {
+      "fullName": "a.aysun",
+      "cardNumber": "000003212334",
+      "expiry": "1234",
+      "cvv": "777",
+      "address": "koroglu",
+      "totalPrice": 2625,
+      "orderId": "619580",
+      "orderDate": "5/6/2026, 1:07:59 AM",
+      "status": "Çatdırıldı",
+      "items": [
+        {
+          "name": "Tissot Seastar 1000 40mm",
+          "price": "875.00",
+          "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw5e506deb/product-pictures/f6c32052-af0a-4c68-8245-e4ef5609f244_T120_807_11_051_00.png",
+          "category": "men",
+          "id": "htD-b1JRZUI",
+          "userId": "io6pl8uVObQ",
+          "quantity": 3
+        }
+      ],
+      "id": "fPVpG92CbAA"
+    },
+    {
+      "fullName": "fidan",
+      "cardNumber": "123456789123",
+      "expiry": "1133",
+      "cvv": "445",
+      "address": "baki",
+      "totalPrice": 290239,
+      "orderId": "299432",
+      "orderDate": "5/6/2026, 6:59:35 PM",
+      "status": "Çatdırıldı",
+      "items": [
+        {
+          "id": "16",
+          "name": "Tissot lovely square 19x19mm",
+          "category": "women",
+          "price": 94537,
+          "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw6e520f63/product-pictures/d0071b92-44ae-4f37-920a-80716c5a63e3_T058-109-11-041-00_shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+          "isNew": false,
+          "isBestSeller": true,
+          "description": "Embodying ultimate femininity and grace, this exquisite timepiece is more than a watch—it is a piece of fine jewelry. Featuring a delicate mother-of-pearl dial and a bezel meticulously hand-set with brilliant-cut diamonds, it is powered by a high-precision Swiss movement. A symbol of luxury and sophistication that complements every elegant silhouette.",
+          "userId": "admin_global",
+          "quantity": 1
+        },
+        {
+          "id": "17",
+          "name": "Tissot le locle 30mm",
+          "category": "women",
+          "price": 65234,
+          "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw277090f9/product-pictures/08bb7582-8cc6-49db-b0f5-7f99f713add4_T006-207-22-096-00_Shadow.png?sm=fit&sw=712&sh=712,gravity=center",
+          "isNew": true,
+          "isBestSeller": false,
+          "description": "Embodying ultimate femininity and grace, this exquisite timepiece is more than a watch—it is a piece of fine jewelry. Featuring a delicate mother-of-pearl dial and a bezel meticulously hand-set with brilliant-cut diamonds, it is powered by a high-precision Swiss movement. A symbol of luxury and sophistication that complements every elegant silhouette.",
+          "userId": "admin_global",
+          "quantity": 3
+        }
+      ],
+      "id": "NQYklBbBFZY"
+    }
+  ],
+  "messages": [
+    {
+      "name": "leman",
+      "email": "leman@gmail.com",
+      "message": "salam",
+      "date": "5/6/2026, 12:09:14 AM",
+      "status": "Oxunmayıb",
+      "id": "gXtIeRSMk5Q"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

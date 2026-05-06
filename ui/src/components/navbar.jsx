@@ -64,7 +64,7 @@ function Navbar() {
   };
 
   return (
-    <nav className='bg-black text-amber-300 p-3 md:p-4 flex justify-between items-center shadow-lg  top-0 z-[100] border-b border-amber-900/20'>
+    <nav className='relative bg-black text-amber-300 p-3 md:p-4 flex justify-between items-center shadow-lg top-0 z-[100] border-b border-amber-900/20'>
       <div className='flex items-center flex-shrink-0'>
         <Link to="/">
           <img 
@@ -123,15 +123,15 @@ function Navbar() {
       </div>
 
       <div className={`
-        absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-t border-amber-900/30 p-6 flex flex-col gap-6 md:hidden transition-all duration-300
-        ${isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-5'}
+        absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-t border-amber-900/30 
+        p-8 flex flex-col gap-6 md:hidden transition-all duration-300 ease-in-out z-[90]
+        ${isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'}
       `}>
-        <NavLink to="/" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-widest text-sm py-2 border-b border-white/5'>{t('home')}</NavLink>
-        <NavLink to="/men" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-widest text-sm py-2 border-b border-white/5'>{t('men')}</NavLink>
-        <NavLink to="/women" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-widest text-sm py-2 border-b border-white/5'>{t('women')}</NavLink>
-        <NavLink to="/about" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-widest text-sm py-2 border-b border-white/5'>{t('about')}</NavLink>
-        <NavLink to="/contact" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-widest text-sm py-2'>{t('contact')}</NavLink>
-        
+        <NavLink to="/" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-[0.2em] text-sm py-2 border-b border-white/5 hover:text-white transition-colors'>{t('home')}</NavLink>
+        <NavLink to="/men" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-[0.2em] text-sm py-2 border-b border-white/5 hover:text-white transition-colors'>{t('men')}</NavLink>
+        <NavLink to="/women" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-[0.2em] text-sm py-2 border-b border-white/5 hover:text-white transition-colors'>{t('women')}</NavLink>
+        <NavLink to="/about" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-[0.2em] text-sm py-2 border-b border-white/5 hover:text-white transition-colors'>{t('about')}</NavLink>
+        <NavLink to="/contact" onClick={() => setIsOpen(false)} className='text-center uppercase tracking-[0.2em] text-sm py-2 hover:text-white transition-colors'>{t('contact')}</NavLink>
       </div>
     </nav>
   )

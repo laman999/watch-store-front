@@ -16,6 +16,7 @@ import Checkout from './pages/checkout';
 import Favorites from './pages/favorites';
 import Admin from './pages/Admin';
 import ProtectedRoute from './components/ProtectedRoute';
+import TrackOrder from './pages/TrackOrder';
 
 
 
@@ -41,6 +42,7 @@ function App() {
         <Route element={<Cart/>} path='cart'/>
         <Route element={<Favorites/>} path='favorites'/>
         <Route element={<Checkout/>} path='checkout'/>
+        <Route element={<TrackOrder/>} path='track-order'/>
       </Route>
        <Route element={<Register/>} path='register'/>
        <Route element={<Login/>} path='login'/>

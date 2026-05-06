@@ -66,7 +66,7 @@ function About() {
             </div>
             
             <div className='text-black dark:text-white'>
-              <h2 className='italic font-bold text-[35px] mb-4 font-serif'>
+              <h2 className='italic font-bold md:text-[35px] text-[28px] mb-4 font-serif'>
                 Every Second is a <span className='text-[#D4AF37]'>Statement</span>
               </h2>
               <p className='text-gray-700 dark:text-gray-400 leading-relaxed italic border-l-2 border-[#D4AF37] pl-6 mb-[50px]'>
@@ -90,7 +90,7 @@ function About() {
               <span className="text-[#D4AF37] text-[9px] tracking-[7px] uppercase mb-4 opacity-60 dark:opacity-50 group-hover:opacity-100 transition-opacity">
                 {t('masculine')}
               </span>
-              <h2 className="text-4xl md:text-7xl font-serif italic text-black dark:text-white group-hover:scale-105 transition-transform duration-700">
+              <h2 className="text-3xl  md:text-7xl font-serif italic text-black dark:text-white group-hover:scale-105 transition-transform duration-700">
                 {t('strength')}
               </h2>
               <div className="mt-8 w-0 h-[1px] bg-[#D4AF37] group-hover:w-20 transition-all duration-500"></div>
@@ -100,7 +100,7 @@ function About() {
               <span className="text-[#D4AF37] text-[9px] tracking-[7px] uppercase mb-4 opacity-60 dark:opacity-50 group-hover:opacity-100 transition-opacity">
                 {t('feminine')}
               </span>
-              <h2 className="text-4xl md:text-7xl font-serif italic text-black dark:text-white group-hover:scale-105 transition-transform duration-700">
+              <h2 className="text-3xl md:text-4xl  md:text-7xl font-serif italic text-black dark:text-white group-hover:scale-105 transition-transform duration-700">
                 {t('elegance')}
               </h2>
               <div className="mt-8 w-0 h-[1px] bg-[#D4AF37] group-hover:w-20 transition-all duration-500"></div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 
-function Header() {
+const Header = ({ onExploreClick }) =>  {
   const { t } = useTranslation();
   return (
     <>
@@ -28,7 +28,7 @@ function Header() {
           <em>{t('hero_desc')}</em>
         </p>
 
-        <button className="bg-amber-400 text-black px-10 py-4 rounded-sm cursor-pointer hover:bg-amber-500 transition-all font-semibold uppercase tracking-widest text-sm md:text-base">
+        <button onClick={onExploreClick} className="bg-amber-400 text-black px-10 py-4 rounded-sm cursor-pointer hover:bg-amber-500 transition-all font-semibold uppercase tracking-widest text-sm md:text-base">
           {t('shop_now')}
         </button>
 
